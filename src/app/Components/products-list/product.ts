@@ -4,4 +4,5 @@ export interface product {
     tipo: string
     precio:number
     stock: number
+    cantidad: number
 }

@@ -7,15 +7,20 @@
             <th scope="col">Tipo</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
+            <th scope="col">Cantidad elegida</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let product of products">
             <td scope="row"> {{product.nombre}} </td>
-            <td scope="row"> <img [src]="product.image" alt=""></td>
+            <td scope="row"> <img class="img-thumbnail" [src]="product.image" alt=""></td>
             <td scope="row"> {{product.tipo}}</td>
             <td scope="row"> {{product.precio}}</td>
             <td><span *ngIf="product.stock == 0">Sin stock</span><span *ngIf="product.stock > 0">{{product.stock}}</span></td>
+                <button class="btn btn-outline-primary btn-sm" (click)="restarCantidad(product)">-</button>
+                {{product.cantidad}}
+                    <!-- <input class="form-control" type="number" max="{{product.stock}}" min = 0 [(ngModel)]="product.cantidad"> --> 
+                <button class="btn btn-outline-primary btn-sm" (click)="sumarCantidad(product)">+</button>
         </tr>
     </tbody>
 </table>
