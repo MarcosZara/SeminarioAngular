@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { product } from '../products-list/product';
 
 
@@ -13,21 +13,31 @@ export class InputNumberComponent implements OnInit {
   ) { }
   
   @Input()
-  product!: product;
-
+  cantidad!: number;
+  @Input()
+  stock!: number;
+  @Output()
+  stockChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output()
+  cantidadChange: EventEmitter<number> = new EventEmitter<number>();
+  
   ngOnInit(): void {
   }
 
-  sumarCantidad(product: product){
-    if(product.stock>0){
-      product.cantidad ++;
-      product.stock--;
+  sumarCantidad(){
+    if(this.stock>0){
+      this.cantidad ++;
+      this.stock--;
+      this.stockChange.emit(this.stock);
+      this.cantidadChange.emit(this.cantidad);
     }
   }
-  restarCantidad(product: product){
-    if(product.stock>=0 && product.cantidad >0){
-      product.cantidad --;
-      product.stock++;
+  restarCantidad(){
+    if(this.stock>=0 && this.cantidad >0){
+      this.cantidad --;
+      this.stock++;
+      this.stockChange.emit(this.stock);
+      this.cantidadChange.emit(this.cantidad);
     }
 
   }

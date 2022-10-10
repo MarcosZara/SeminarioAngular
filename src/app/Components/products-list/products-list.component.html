@@ -18,7 +18,7 @@
             <td scope="row"> {{product.precio}}</td>
             <td><span *ngIf="product.stock == 0">Sin stock</span><span *ngIf="product.stock > 0">{{product.stock}}</span></td>
             <td>
-                 <app-input-number [product]="product"></app-input-number>
+                 <app-input-number [(cantidad)]="product.cantidad " [(stock)]="product.stock"></app-input-number>
             </td>  
         </tr>
     </tbody>

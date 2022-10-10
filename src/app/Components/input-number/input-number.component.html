@@ -1,6 +1,6 @@
-<div >
-    <button class="btn btn-outline-primary btn-sm" (click)="restarCantidad(product)">-</button>
-    {{product.cantidad}}
-        <!-- <input class="form-control" type="number" max="{{product.stock}}" min = 0 [(ngModel)]="product.cantidad"> --> 
-    <button class="btn btn-outline-primary btn-sm" (click)="sumarCantidad(product)">+</button>
+<div class="conteiner-inputnumber">
+    <button class="btn btn-outline-primary btn-sm" (click)="restarCantidad()">-</button>
+   <!--  {{cantidad}} -->
+    <input class="form-control" style="text-align:center" type="text" max="{{stock}}" min = 0 [(ngModel)]="cantidad" readonly>  
+    <button class="btn btn-outline-primary btn-sm" (click)="sumarCantidad()">+</button>
 </div>
