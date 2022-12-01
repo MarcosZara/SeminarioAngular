@@ -2,7 +2,7 @@ import { ProductDataService } from '../../servicios/product-data.service';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { product } from './product';
-import { ProductCartService} from 'src/app/servicios/product-cart.service';
+import { ProductCartService } from '../../servicios/product-cart.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
