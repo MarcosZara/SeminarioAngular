@@ -1,6 +1,6 @@
 <h2>Aderezos Seleccionado</h2>
 <ul>
   <li *ngFor=" let product of (shopList$ | async)">
-    <h3>{{product.nombre}} {{product.cantidad}}</h3>
+    <h3>{{product.nombre}} - ({{product.cantidad}}) </h3>
   </li>
 </ul>
