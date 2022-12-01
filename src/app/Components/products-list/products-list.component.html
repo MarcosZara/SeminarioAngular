@@ -5,7 +5,6 @@
             <th scope="col">Nombre</th>
             <th scope="col">imagen</th>
             <th scope="col">Tipo</th>
-            <th scope="col">Precio</th>
             <th scope="col">Stock</th>
             <th scope="col">Cantidad elegida</th>
             <th scope="col">Comprar</th>
@@ -14,9 +13,9 @@
     <tbody>
         <tr *ngFor = "let product of products">
             <td scope="row"> {{product.nombre}} </td>
-            <td scope="row"> <img class="img-thumbnail" [src]="product.image" alt="SOY UN ALT"></td>
+            <td scope="row"> <img class="img-thumbnail" [src]="product.image"git ></td>
             <td scope="row"> {{product.tipo}}</td>
-            <td scope="row"> {{product.precio}}</td>
+
             <td>
               <span *ngIf="product.stock == 0">Sin stock</span><span *ngIf="product.stock > 0">{{product.stock}}</span>
             </td>
