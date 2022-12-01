@@ -9,6 +9,9 @@ import { CarritoComprasComponent } from './Components/carrito-compras/carrito-co
 import { CandelaComponent } from './Components/candela/candela.component';
 import { ContactoComponent } from './Components/contacto/contacto.component';
 import { InputNumberComponent } from './Components/input-number/input-number.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HamburgComponent } from './hamburg/hamburg.component';
+import { AderezosComponent } from './Components/aderezos/aderezos.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { InputNumberComponent } from './Components/input-number/input-number.com
     CarritoComprasComponent,
     CandelaComponent,
     ContactoComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    HamburgComponent,
+    AderezosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,10 +8,10 @@ import { product } from '../products-list/product';
   styleUrls: ['./input-number.component.scss']
 })
 export class InputNumberComponent implements OnInit {
-  
-  constructor(
+
+  constructor( 
   ) { }
-  
+
   @Input()
   cantidad!: number;
   @Input()
@@ -20,7 +20,7 @@ export class InputNumberComponent implements OnInit {
   stockChange: EventEmitter<number> = new EventEmitter<number>();
   @Output()
   cantidadChange: EventEmitter<number> = new EventEmitter<number>();
-  
+
   ngOnInit(): void {
   }
 

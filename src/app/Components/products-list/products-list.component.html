@@ -1,25 +1,31 @@
-<h2>Lista de productos</h2>
+<h2>Lista de Aderezos</h2>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Nombre</th>
-            <th scope="col"> </th>
+            <th scope="col">imagen</th>
             <th scope="col">Tipo</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
             <th scope="col">Cantidad elegida</th>
-        </tr>
+            <th scope="col">Comprar</th>
+          </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let product of products">
             <td scope="row"> {{product.nombre}} </td>
-            <td scope="row"> <img class="img-thumbnail" [src]="product.image" alt=""></td>
+            <td scope="row"> <img class="img-thumbnail" [src]="product.image" alt="SOY UN ALT"></td>
             <td scope="row"> {{product.tipo}}</td>
             <td scope="row"> {{product.precio}}</td>
-            <td><span *ngIf="product.stock == 0">Sin stock</span><span *ngIf="product.stock > 0">{{product.stock}}</span></td>
             <td>
-                 <app-input-number [(cantidad)]="product.cantidad " [(stock)]="product.stock"></app-input-number>
-            </td>  
+              <span *ngIf="product.stock == 0">Sin stock</span><span *ngIf="product.stock > 0">{{product.stock}}</span>
+            </td>
+            <td>
+                 <app-input-number [(cantidad)]="product.cantidad" [(stock)]="product.stock"></app-input-number>
+            </td>
+            <td>
+               <button class="btn btn-primary" (click)="addCart(product)">agregar</button>
+            </td>
         </tr>
     </tbody>
 </table>

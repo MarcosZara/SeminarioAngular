@@ -1,10 +1,8 @@
 import { CurrencyPipe } from "@angular/common"
 
-export interface product {
+export interface hamburg {
     nombre:string
     image:string
-    tipo: string
+    descripcion: string
     precio:number
-    stock: number
-    cantidad: number
 }

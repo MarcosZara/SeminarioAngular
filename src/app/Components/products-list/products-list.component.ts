@@ -1,6 +1,9 @@
+import { ProductDataService } from '../../servicios/product-data.service';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { product } from './product';
+import { ProductCartService} from 'src/app/servicios/product-cart.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-products-list',
@@ -8,38 +11,28 @@ import { product } from './product';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  products : product[] = [{
-    image: "/assets/img/vela-soja.jpeg",
-    nombre: "Vela",
-    tipo: "Cera de soja",
-    precio: 100,
-    stock: 5,
-    cantidad:0,
-  },
-  {image: "/assets/img/vela-soja.jpeg",
-  nombre: "Vela",
-  tipo: "Cera de soja",
-  precio: 150,
-  stock: 0,
-  cantidad:0,
-  },
-  {
-  image: "/assets/img/vela-soja.jpeg",
-    nombre: "Vela",
-    tipo: "Cera de soja",
-    precio: 120,
-    stock: 10,
-    cantidad:0,
-  },]
-  constructor() { }
+  products : product[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private cart:ProductCartService ,
+    private productDataService :ProductDataService  ) {
   }
 
+  ngOnInit(): void {
+    this.productDataService.getAll()
+    .subscribe(products => this.products=products)
+
+  }
+
+  addCart(product: product):void{
+    this.cart.addToCart(product);
+   // product.stock -= product.cantidad;
+    product.cantidad=0;
+  }
   sumarCantidad(product: product){
     if(product.stock>0){
       product.cantidad ++;
-      product.stock--;
+      /* product.stock--; */
     }
   }
   restarCantidad(product: product){
