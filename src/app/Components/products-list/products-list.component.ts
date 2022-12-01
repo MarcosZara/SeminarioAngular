@@ -26,13 +26,11 @@ export class ProductsListComponent implements OnInit {
 
   addCart(product: product):void{
     this.cart.addToCart(product);
-   // product.stock -= product.cantidad;
     product.cantidad=0;
   }
   sumarCantidad(product: product){
     if(product.stock>0){
       product.cantidad ++;
-      /* product.stock--; */
     }
   }
   restarCantidad(product: product){
