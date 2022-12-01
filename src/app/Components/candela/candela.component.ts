@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, importProvidersFrom, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-candela',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandelaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Hamburgueseria')
+  }
 
   ngOnInit(): void {
   }
