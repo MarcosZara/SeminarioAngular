@@ -12,6 +12,7 @@ import { InputNumberComponent } from './Components/input-number/input-number.com
 import { HttpClientModule } from '@angular/common/http';
 import { HamburgComponent } from './hamburg/hamburg.component';
 import { AderezosComponent } from './Components/aderezos/aderezos.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AderezosComponent } from './Components/aderezos/aderezos.component';
     ContactoComponent,
     InputNumberComponent,
     HamburgComponent,
-    AderezosComponent
+    AderezosComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
